@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cellar-stairs-1.mp3-838f2533919f260eb78f6e286b5687c1.mp3str"
+
+[deps]
+
+source_file="res://assets/cellar-stairs-1.mp3"
+dest_files=[ "res://.import/cellar-stairs-1.mp3-838f2533919f260eb78f6e286b5687c1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

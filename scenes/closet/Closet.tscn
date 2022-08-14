@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/tileset-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://scenes/locker/Locker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/closet/Lockers.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 41.0
+height = 48.0
+
+[sub_resource type="TileSet" id=2]
+0/name = "tileset-Sheet.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 192, 64, 107, 82 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[node name="Closet" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 50, 39 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="Area2D"]
+tile_set = SubResource( 2 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
+
+[node name="Lockers" type="Node2D" parent="Area2D"]
+script = ExtResource( 4 )
+
+[node name="Locker1" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 10, 13 )
+
+[node name="Locker2" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 26, 13 )
+
+[node name="Locker3" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 42, 13 )
+
+[node name="Locker4" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 58, 13 )
+
+[node name="Locker5" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 74, 13 )
+
+[node name="Locker6" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 90, 13 )
+
+[node name="Locker7" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 10, 29 )
+
+[node name="Locker8" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 26, 29 )
+
+[node name="Locker9" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 42, 29 )
+
+[node name="Locker10" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 58, 29 )
+
+[node name="Locker11" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 74, 29 )
+
+[node name="Locker12" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 90, 29 )
+
+[node name="Locker13" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 10, 45 )
+
+[node name="Locker14" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 26, 45 )
+
+[node name="Locker15" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 42, 45 )
+
+[node name="Locker16" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 58, 45 )
+
+[node name="Locker17" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 74, 45 )
+
+[node name="Locker18" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 90, 45 )
+
+[node name="Locker19" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 10, 61 )
+
+[node name="Locker20" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 26, 61 )
+
+[node name="Locker21" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 42, 61 )
+
+[node name="Locker22" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 58, 61 )
+
+[node name="Locker23" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 74, 61 )
+
+[node name="Locker24" parent="Area2D/Lockers" groups=["lockers"] instance=ExtResource( 2 )]
+position = Vector2( 90, 61 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D/Lockers" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D/Lockers" method="_on_Area2D_body_exited"]

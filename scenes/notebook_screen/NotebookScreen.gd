@@ -3,8 +3,12 @@ extends Node2D
 signal close_notebook
 signal next_page
 signal prev_page
+signal clean_page
 
 func _input(event):
+	if Input.is_action_just_pressed("clean_page") and self.visible:
+		emit_signal('clean_page')
+	
 	if Input.is_action_just_pressed("ui_cancel"):
 		emit_signal('close_notebook')
 	

@@ -1,5 +1,7 @@
 extends Node2D
 
+var util = load("res://scripts/Util.gd").new()
+
 onready var _lines := $Lines
 var _pressed := false
 var _current_line: Line2D
@@ -19,6 +21,9 @@ func _input(event):
 		if event is InputEventMouseMotion && _pressed:
 			_current_line.add_point(event.position)
 
+
+func clean_page():
+	util.remove_all_childs(_lines)
 
 func _on_Area2D_mouse_entered():
 	_is_inside_area = true

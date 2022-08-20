@@ -602,4 +602,3 @@ anims/open9 = SubResource( 54 )
 
 [node name="Closet" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 44 )
-script = null

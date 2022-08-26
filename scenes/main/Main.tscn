@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/office/Office.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/character/Character.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://scenes/main/main_hud.gd" type="Script" id=4]
 [ext_resource path="res://scenes/notebook_screen/NotebookScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/main/Main.gd" type="Script" id=6]
+[ext_resource path="res://scenes/clock/Clock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/box/BoxArrive.tscn" type="PackedScene" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "controls.png 0"
@@ -29,6 +31,9 @@ main_screen_controls_active = true
 
 [node name="Office" parent="." instance=ExtResource( 1 )]
 
+[node name="BoxArrive" parent="." instance=ExtResource( 8 )]
+position = Vector2( 44, 86 )
+
 [node name="Character" parent="." instance=ExtResource( 2 )]
 position = Vector2( 17, 113 )
 
@@ -42,6 +47,9 @@ cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( 65537, 0, 0 )
 script = ExtResource( 4 )
+
+[node name="Clock" parent="main_hud" instance=ExtResource( 7 )]
+position = Vector2( 150, 2 )
 
 [connection signal="close_notebook" from="NotebookScreen" to="." method="_on_NotebookScreen_close_notebook"]
 [connection signal="open_notebook" from="main_hud" to="." method="_on_main_hud_open_notebook"]

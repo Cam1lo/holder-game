@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/locker/Locker.gd" type="Script" id=1]
 [ext_resource path="res://assets/open-close-sheet.png" type="Texture" id=2]
@@ -38,6 +38,21 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "open_with_item"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
 [node name="Locker" type="Area2D"]
 script = ExtResource( 1 )
 
@@ -46,10 +61,11 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-hframes = 2
+hframes = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/close = SubResource( 2 )
 anims/open = SubResource( 3 )
+anims/open_with_item = SubResource( 4 )
 
 [connection signal="input_event" from="." to="." method="_on_Locker_input_event"]

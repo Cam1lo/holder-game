@@ -127,11 +127,13 @@ cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( 65537, 2, 0, 65540, 4, 0, 65543, 5, 0, 65546, 6, 0 )
 
-[node name="Notebook" parent="." instance=ExtResource( 1 )]
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 219, 116 )
 frames = SubResource( 2 )
+
+[node name="Notebook" parent="." instance=ExtResource( 1 )]
+position = Vector2( 162, 65 )
+z_index = 1
 
 [connection signal="clean_page" from="." to="Notebook" method="_on_NotebookScreen_clean_page"]
 [connection signal="next_page" from="." to="Notebook" method="_on_NotebookScreen_next_page"]

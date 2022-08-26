@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var util = load("res://scripts/Util.gd").new()
 
@@ -11,7 +11,6 @@ func _input(event):
 	if _is_inside_area:
 		if event is InputEventMouseButton:
 			_pressed = event.pressed
-			
 			if _pressed:
 				_current_line = Line2D.new()
 				_current_line.set_default_color(Color.black)

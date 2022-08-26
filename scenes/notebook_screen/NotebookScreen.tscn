@@ -112,6 +112,7 @@ animations = [ {
 } ]
 
 [node name="NotebookScreen" type="Node2D"]
+scale = Vector2( 1.00837, 1.02826 )
 script = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]

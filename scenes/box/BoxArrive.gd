@@ -15,9 +15,12 @@ func _on_PopupMenu_id_pressed(id):
 	self.hide()
 
 func _on_Area2D_mouse_entered():
-	if !menu_visible:
-		mouse_pos = get_global_mouse_position()
-	show_menu()
+	var main_controls_active = get_node('/root/Main').main_screen_controls_active
+	
+	if main_controls_active:
+		if !menu_visible:
+			mouse_pos = get_global_mouse_position()
+		show_menu()
 
 func _on_PopupMenuArea_mouse_exited():
 	if !mouse_inside_menu:

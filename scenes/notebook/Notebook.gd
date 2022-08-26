@@ -3,7 +3,6 @@ extends Node2D
 
 onready var active_page_name = 'p1'
 
-
 func _on_NotebookScreen_next_page():
 	if active_page_name == 'p1':
 		$Sprite/p1.visible = false

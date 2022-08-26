@@ -5,11 +5,14 @@ var item
 signal locker_open
 
 func _on_Locker_input_event(viewport, event, shape_idx):
-	if is_left_click(event):
-		toggle_animation()
-		closed = not closed
-		if !closed:
-			emit_signal("locker_open")
+	var main_controls_active = get_node('/root/Main').main_screen_controls_active
+	
+	if main_controls_active:
+		if is_left_click(event):
+			toggle_animation()
+			closed = not closed
+			if !closed:
+				emit_signal("locker_open")
 
 func is_left_click(event):
 	if is_character_inside_area():

@@ -37,10 +37,6 @@ position = Vector2( 44, 86 )
 [node name="Character" parent="." instance=ExtResource( 2 )]
 position = Vector2( 17, 113 )
 
-[node name="NotebookScreen" parent="." instance=ExtResource( 5 )]
-visible = false
-position = Vector2( 0, 1 )
-
 [node name="main_hud" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 8, 8 )
@@ -48,8 +44,12 @@ format = 1
 tile_data = PoolIntArray( 65537, 0, 0 )
 script = ExtResource( 4 )
 
-[node name="Clock" parent="main_hud" instance=ExtResource( 7 )]
-position = Vector2( 150, 2 )
+[node name="Clock" parent="." instance=ExtResource( 7 )]
+position = Vector2( 262, 1 )
 
-[connection signal="close_notebook" from="NotebookScreen" to="." method="_on_NotebookScreen_close_notebook"]
+[node name="NotebookScreen" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 0, 1 )
+
 [connection signal="open_notebook" from="main_hud" to="." method="_on_main_hud_open_notebook"]
+[connection signal="close_notebook" from="NotebookScreen" to="." method="_on_NotebookScreen_close_notebook"]
